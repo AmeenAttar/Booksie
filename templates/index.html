@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <head>
-  <title>OpenAI Quickstart</title>
+  <title>Booksie</title>
   <link
     rel="shortcut icon"
-    href="{{ url_for('static', filename='dog.png') }}"
+    href="{{ url_for('static', filename='booksie.png') }}"
   />
   <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
 </head>
 
 <body>
-  <img src="{{ url_for('static', filename='dog.png') }}" class="icon" />
-  <h3>Name my pet</h3>
+  <img src="{{ url_for('static', filename='booksie.png') }}" class="icon" />
+  <h3>Summarize my book</h3>
   <form action="/" method="post">
-    <input type="text" name="animal" placeholder="Enter an animal" required />
-    <input type="submit" value="Generate names" />
+    <input type="text" name="book" placeholder="Enter book name" required />
+    <input type="submit" value="Generate summary" />
   </form>
   {% if result %}
   <div class="result">{{ result }}</div>
   {% endif %}
+
+
+    <style>
+    #footer {
+        position: fixed;
+        padding: 10px 10px 30px 10px;
+        bottom: 0;
+        width: 100%;
+        /* Height of the footer*/
+        height: 20px;
+        background: rgb(255, 255, 255);
+        text-align: center;
+    }
+  </style>
+  <div id="footer">Made by <a href="https://twitter.com/ameen_af_">Ameen Attar</a>.
+  </div>
+
+
 </body>
